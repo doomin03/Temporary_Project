@@ -1,0 +1,309 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+:root {
+  --personal-very-dark: #222831;
+  --personal-dark: #393e46;
+  --personal-light: #00adb5;
+  --personal-very-light: #eeeeee;
+}
+* {
+  font-family: "Pretendard-Regular";
+  margin: 0;
+  padding: 0;
+  color: var(--personal-very-light);
+}
+body {
+  background-color: var(--personal-very-dark);
+}
+a {
+  font-weight: 100;
+  text-decoration: none;
+}
+a:hover {
+  color: #00adb5;
+}
+ul {
+  list-style: none;
+}
+.highlight {
+  font-weight: bold;
+  color: var(--personal-light);
+}
+#content {
+  height: auto;
+  min-height: calc(100vh - 150px);
+  padding-top: 50px;
+}
+input[type="text"],
+input[type="password"] {
+  padding: 10px 20px;
+  color: var(--personal-very-dark);
+  font-weight: bold;
+  background-color: var(--personal-very-light);
+  border: none;
+  font-size: 20px;
+  border-radius: 100px;
+}
+input.verified,
+input.verified::placeholder {
+  background-color: var(--personal-light);
+  color: var(--personal-dark) !important;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
+input:checked ~ label {
+  background-color: var(--personal-light) !important;
+}
+select,
+option {
+  min-width: 100px;
+  padding: 5px 15px;
+  border: 2px solid var(--personal-light);
+  color: var(--personal-light);
+  background-color: var(--personal-very-dark);
+}
+button {
+  min-width: 175px;
+  padding: 10px 15px;
+  color: var(--personal-light);
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid var(--personal-light);
+  border-radius: 100px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover,
+button.prestige {
+  background-color: var(--personal-light);
+  color: var(--personal-very-dark);
+}
+button.prestige:hover {
+  color: var(--personal-light);
+  background-color: var(--personal-very-dark);
+}
+.warning,
+.warning * {
+  color: rgb(216, 10, 10);
+}
+.warning b {
+  text-decoration: underline;
+}
+/* footer */
+footer {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  background-color: var(--personal-dark);
+}
+footer #sub-nav * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+footer #main-footer {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 100px;
+}
+footer #main-footer .footer-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+footer #main-footer .footer-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+footer #main-footer .footer-info * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 !important;
+}
+footer #main-footer .footer-info div {
+  margin-bottom: 10px;
+}
+footer .footer-member {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  margin-bottom: 10px;
+}
+/* header */
+header {
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr;
+  background-color: var(--personal-dark);
+  height: 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+header a:hover {
+  color: var(--personal-light);
+}
+header > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#nav ul * {
+  font-weight: bold;
+}
+#account {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#account * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+/* main - content */
+#content > div {
+  width: 100%;
+  height: 100vh;
+}
+#content > div.left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align-last: left;
+}
+#content > div.right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: right;
+}
+#content > div > .txt {
+  font-size: 64px;
+  padding: 50px;
+  font-weight: bold;
+}
+#content > div > .txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* login */
+.login.fieldset {
+  text-align: center;
+  margin: 100px auto;
+  width: 25%;
+  height: 600px;
+}
+.login.fieldset legend {
+  padding: 10px 15px;
+  font-size: 28px;
+  font-weight: bold;
+}
+.login.input-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 80px auto;
+}
+.login.input-container label {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 20px;
+  background-color: #eee;
+  border-radius: 100px 0 0 100px;
+  color: var(--personal-very-dark);
+  font-weight: bold;
+}
+.login.input-container input:not([type="submit"]) {
+  width: 80%;
+  border-radius: 0 100px 100px 0;
+  border: 3px solid var(--personal-very-dark);
+}
+.login input#info ~ label {
+  width: 30px;
+  height: 30px;
+  border-radius: 1000px;
+  background-color: #fff;
+  display: inline-block;
+}
+.login.row {
+  margin-top: 60px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+.login a {
+  text-decoration: underline;
+}
+/* register */
+.register .warning {
+  margin-top: 15px;
+}
+.register.fieldset {
+  text-align: center;
+  margin: 100px auto;
+  width: 25%;
+  height: 600px;
+}
+.register.fieldset legend {
+  padding: 10px 15px;
+  font-size: 28px;
+  font-weight: bold;
+}
+.register.input-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 40px auto;
+}
+.register.input-container label {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 20px;
+  background-color: #eee;
+  border-radius: 100px 0 0 100px;
+  color: var(--personal-very-dark);
+  font-weight: bold;
+}
+.register.input-container input:not([type="submit"]) {
+  width: 80%;
+  border-radius: 0 100px 100px 0;
+  border: 3px solid var(--personal-very-dark);
+}
+.register input#info ~ label {
+  width: 30px;
+  height: 30px;
+  border-radius: 1000px;
+  background-color: #fff;
+  display: inline-block;
+}
+.register.row {
+  margin-top: 60px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+.register a {
+  text-decoration: underline;
+}
