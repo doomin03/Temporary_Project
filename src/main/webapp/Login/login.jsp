@@ -6,12 +6,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>양영 데이터 센터</title>
-    <link rel="stylesheet" href="/Temporary_Projects/resources/css/style.css" />
+    <link rel="stylesheet" href="/Temporary_Project/resources/css/style.css" />
   </head>
   <body>
     <header>
       <div class="logo">
-        <a href="/Temporary_Projects/index.jsp">로고</a
+        <a href="/Temporary_Project/index.jsp">로고</a
         ><!-- img on here -->
       </div>
       <div id="nav">

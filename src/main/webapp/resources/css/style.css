@@ -10,12 +10,14 @@
   --personal-dark: #393e46;
   --personal-light: #00adb5;
   --personal-very-light: #eeeeee;
+  --warn: rgb(216, 10, 10);
 }
 * {
   font-family: "Pretendard-Regular";
   margin: 0;
   padding: 0;
   color: var(--personal-very-light);
+  box-sizing: border-box;
 }
 body {
   background-color: var(--personal-very-dark);
@@ -36,7 +38,7 @@ ul {
 }
 #content {
   height: auto;
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 100px);
   padding-top: 50px;
 }
 input[type="text"],
@@ -50,8 +52,8 @@ input[type="password"] {
   border-radius: 100px;
 }
 input.verified,
+select.verified,
 input.verified::placeholder {
-  background-color: var(--personal-light);
   color: var(--personal-dark) !important;
 }
 input[type="checkbox"],
@@ -62,12 +64,18 @@ input:checked ~ label {
   background-color: var(--personal-light) !important;
 }
 select,
-option {
+option,
+input[type="number"],
+.info-row input[type="text"],
+.info-row input[type="password"] {
   min-width: 100px;
   padding: 5px 15px;
   border: 2px solid var(--personal-light);
   color: var(--personal-light);
   background-color: var(--personal-very-dark);
+}
+option:disabled {
+  color: var(--personal-dark) !important;
 }
 button {
   min-width: 175px;
@@ -92,10 +100,13 @@ button.prestige:hover {
 }
 .warning,
 .warning * {
-  color: rgb(216, 10, 10);
+  color: var(--warn);
 }
 .warning b {
   text-decoration: underline;
+}
+input:focus-within {
+  border-color: var(--warn) !important;
 }
 /* footer */
 footer {
@@ -260,9 +271,9 @@ header > div {
 }
 .register.fieldset {
   text-align: center;
-  margin: 100px auto;
+  margin: 50px auto;
   width: 25%;
-  height: 600px;
+  height: 700px;
 }
 .register.fieldset legend {
   padding: 10px 15px;
@@ -273,7 +284,7 @@ header > div {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  margin: 40px auto;
+  margin: 30px auto;
 }
 .register.input-container label {
   width: 80px;
@@ -306,4 +317,81 @@ header > div {
 }
 .register a {
   text-decoration: underline;
+}
+.register.info-row {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: 20px auto;
+  grid-row-gap: 20px;
+  grid-column-gap: 30px;
+}
+.register.info-row * {
+  width: 100% !important;
+  color: var(--personal-light);
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 10px 20px !important;
+}
+.register.info-row *::placeholder {
+  /* color: var(--personal-light); */
+}
+.register.info-row input[type="text"],
+.register.info-row input[type="password"] {
+  border-radius: 0;
+  font-weight: normal;
+}
+.register #userName {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+.register #userRegID,
+.register #userRegPW,
+.register #userPhoneNum,
+.register #userSchoolID,
+.register #userSchoolPW {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.register.checkbox-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  width: 75%;
+  margin: 0 auto;
+}
+.register.checkbox-container label {
+  width: 30px !important;
+  height: 30px !important;
+  padding: 0;
+}
+.register.checkbox-container p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.register input:disabled,
+.register input:disabled::placeholder {
+  color: var(--personal-dark);
+  border-color: var(--personal-dark);
+}
+.register.row {
+  margin: 20px;
+}
+#tapController .tapSwitch {
+  padding: 5px;
+  border: 2px solid var(--personal-light);
+  width: max-content;
+  border-radius: 100px;
+  margin: 20px;
+}
+#tapController button.active {
+  background-color: var(--personal-light);
+  color: var(--personal-very-dark);
+}
+#tapController button:not(.active) {
+  border: none;
 }

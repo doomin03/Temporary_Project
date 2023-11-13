@@ -19,8 +19,8 @@
         </ul>
       </div>
       <div id="account">
-        <a href="/Temporary_Projects/Login/login.jsp">Sign in</a>
-        <a href="./register.html">Sign Up</a>
+        <a href="/Temporary_Project/Login/login.jsp">Sign in</a>
+        <a href="/Temporary_Project/register.jsp">Sign Up</a>
       </div>
     </header>
     <div id="content">
