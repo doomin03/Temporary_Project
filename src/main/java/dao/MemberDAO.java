@@ -34,24 +34,7 @@ public class MemberDAO {
 		return list;
 	}
 	
-	public int insertMember(MemberVO data) {
-		int result = 0;
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		
-		String sql = "INSERT INTO MEMBER_YDSQL(index_,id_ , pw_) VALUES (tmp_seq.NEXTVAL,? ,?);";
-		
-		try {
-			 conn = jdbcUtil.getConnection();
-			 pstmt = conn.prepareStatement(sql);
-			 pstmt.setString(1, data.getUserid());
-			 pstmt.setString(2, data.getUserPwd());
-			 result = pstmt.executeUpdate();
-			 
-			
-		} catch (SQLException e) {e.printStackTrace();}
-		return result;
-	}
+	
 	public int insertStudent(MemberVO data) {
 		int result = 0;
 		Connection conn = null;
@@ -68,6 +51,28 @@ public class MemberDAO {
 			
 		} catch (SQLException e) {e.printStackTrace();}
 		return result;
+	}
+	
+	public boolean existId(String id) {
+		boolean isExist = false;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM lib_member WHERE member_id = ?";
+		
+		try {
+			 conn = jdbcUtil.getConnection();
+			 pstmt = conn.prepareStatement(sql);
+			 pstmt.setString(1, id);
+			 rs = pstmt.executeQuery();
+			 
+			 if (rs.next()) isExist = true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("checkLoginUser : sql error");
+		} finally {jdbcUtil.close(conn, pstmt, rs);}
+		return isExist;
 	}
 	
 }

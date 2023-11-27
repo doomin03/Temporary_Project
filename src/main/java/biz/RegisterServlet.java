@@ -25,19 +25,24 @@ public class RegisterServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		MemberDAO dao = new MemberDAO();
-		/*boolean isExist = dao.existId(request.getParameter("memberId"));
+		boolean isExist = dao.existId(request.getParameter("memberId"));
 		int result = 0;
 		
 		if(isExist) out.println("<script> alert('이미 존재하는 ID입니다. 다시 입력해주세요.'); history.back(); </script>");
 		else {
 			MemberVO data = new MemberVO();
-			data.setMemberId(request.getParameter("memberId"));
-			data.setMemberPwd(request.getParameter("memberPwd"));
-			data.setMemberName(request.getParameter("name"));
-			data.setMemberAddr(request.getParameter("addr"));
-			data.setMemberAge(Integer.parseInt(request.getParameter("age")));
+			data.setGrade_(Integer.parseInt(request.getParameter("grade")));
+			data.setClass_(Integer.parseInt(request.getParameter("class")));
+			data.setNumber_(Integer.parseInt(request.getParameter("number")));
+			data.setGender_(request.getParameter("number"));
+			data.setName_(request.getParameter("name"));
+			data.setPhone_num(Integer.parseInt(request.getParameter("phone_num")));
+			data.setSchool_id(request.getParameter("school_id"));
+			data.setSchool_pw(request.getParameter("school_pw"));
+			data.setUserid(request.getParameter("user_id"));
+			data.setUserPwd(request.getParameter("user_pwd"));
 			
-			result = dao.insertMember(data);
+			result = dao.insertStudent(data);
 			if (result > 0) {
 				HttpSession session = request.getSession();
 				session.setAttribute("loginOK", data);
@@ -47,6 +52,6 @@ public class RegisterServlet extends HttpServlet {
 			response.sendRedirect("/Library_Project/index.jsp");
 			
 		}
-		*/
+		
 	}
 }
